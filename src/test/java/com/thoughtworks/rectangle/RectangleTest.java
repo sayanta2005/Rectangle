@@ -4,9 +4,15 @@ import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 public class RectangleTest {
     @Test
-    void checkAreaForPositiveLengthAndBreadth(){
-        Rectangle rectangle = new Rectangle(10, 5);
-        int area = rectangle.getArea();
-        assertThat(area,is(equalTo(50)));
+    void shouldReturnAreaWhenLengthAndBreadthIsGiven(){
+        Rectangle rectangle = new Rectangle(4.5, 3.5);
+        double area = rectangle.area();
+        assertThat(area,is(closeTo(15.75,.001)));
+    }
+    @Test
+    void shouldReturnPerimeterWhenLengthAndBreadthIsGiven(){
+        Rectangle rectangle = new Rectangle(5.35, 3.75);
+        double perimeter = rectangle.perimeter();
+        assertThat(perimeter,is(closeTo(18.2, .001)));
     }
 }

@@ -1,21 +1,9 @@
 package com.thoughtworks.rectangle;
 
 class Rectangle{
-    private int length;
-    private int breadth;
-    public int getLength(){
-        return length;
-    }
-    public void setLength(int length){
-        this.length = length;
-    }
-    public int getBreadth(){
-        return breadth;
-    }
-    public void setBreadth(int breadth){
-        this.breadth = breadth;
-    }
-    Rectangle(int length, int breadth){
+    private final double length;
+    private final double breadth;
+    Rectangle(double length, double breadth){
         
         if(length<0 || breadth<0){
             throw new IllegalArgumentException("Values must be positive");
@@ -23,9 +11,10 @@ class Rectangle{
         this.length = length;
         this.breadth = breadth;
     }
-    public int getArea(){
+    public double area(){
         return length*breadth;
     }
-
-
+    public double perimeter(){
+        return 2*(length+breadth);
+    }
 }
